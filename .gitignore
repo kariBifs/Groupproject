@@ -1,1 +1,31 @@
+import os
+import re
+
+
+def main():
+    #Display the start-up message
+    startup_message()
+    #open file and make all upper, take gaps out and take newline out
+    my_seq=input("Enter your file name\n")
+    #creates dictionary
+    info={}
+    file=open(my_seq)
+    for line in file:
+        line=line.upper().rstrip('\n').replace("-","")
+        line = line.strip()
+        if line.startswith('>'):
+            header=line[1:]
+            info[header]=''
+        else:
+            info[header]=info[header]+line
+    print(info)
+    
+    
+def startup_message():
+    print("""This program will find the orfs in your sequence.Enter the name
+    of your sequence and press enter to continue\n\n""")
+
+
+    
+main()
 #Start group project here. 
