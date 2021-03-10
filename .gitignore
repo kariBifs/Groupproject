@@ -18,11 +18,31 @@ def main():
         else:
             info[header]=info[header]+line
     print(info)
-    
+    #read in the 3 frames
+    for x in info.values():
+        reading1=read_file1(x)
+        reading2=read_file2(x)
+        reading3=read_file3(x)
+        print("The reading frame1:\n",reading1)
+        print("The reading frame2:\n",reading2)
+        print("The reading frame3:\n",reading3) 
     
 def startup_message():
     print("""This program will find the orfs in your sequence.Enter the name
     of your sequence and press enter to continue\n\n""")
+def read_file1(dna):
+    for x in dna:
+        reading1=dna[0:]
+        return reading1
+def read_file2(dna): 
+    for x in dna:
+        reading2=dna[1:]
+        return reading2
+def read_file3(dna):
+    for x in dna:
+        reading3=dna[2:]
+        return reading3
+   
 
 
     
